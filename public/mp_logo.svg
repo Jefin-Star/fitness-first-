@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 330" fill="none">
+  <!-- Exact MP Monogram from User's Uploaded Photo -->
+  <g fill="#000000">
+    <!-- Main M & P Intertwined Geometry -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="
+      M 40 286
+      C 40 298 50 308 62 308
+      L 104 308
+      L 104 126
+      L 230 240
+      C 238 248 250 248 258 240
+      L 316 190
+      L 316 230
+      C 316 236 321 241 327 241
+      L 387 241
+      C 393 241 398 236 398 230
+      L 398 178
+      L 456 178
+      C 496 178 528 146 528 106
+      C 528 66 496 34 456 34
+      L 326 34
+      C 308 34 292 42 282 56
+      L 244 108
+      L 142 34
+      L 74 34
+      C 56 34 40 48 40 66
+      L 40 286 Z
+
+      M 398 126
+      L 398 86
+      L 454 86
+      C 465 86 474 95 474 106
+      C 474 117 465 126 454 126
+      L 398 126 Z
+    " />
+
+    <!-- Lower Horizontal Bar with Diagonal Cut -->
+    <path d="
+      M 198 308
+      L 446 308
+      C 463 308 476 295 476 278
+      C 476 261 463 248 446 248
+      L 254 248
+      L 198 308 Z
+    " />
+  </g>
+</svg>

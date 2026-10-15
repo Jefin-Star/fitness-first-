@@ -1,0 +1,6 @@
+{
+  "name": "FITNESS FIRST FITNESS CENTRE",
+  "description": "Premium modern gym in Thrissur, Kerala. State-of-the-art strength & cardio training, certified bodybuilding leadership, and flexible membership plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

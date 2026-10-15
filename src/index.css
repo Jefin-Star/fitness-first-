@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #080d0a;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+/* Custom Luminous Glow Styles - #00E653 & #FFFFFF */
+.text-neon-green, .text-lime-bright, .text-accent {
+  color: #00E653;
+  text-shadow: 0 0 15px rgba(0, 230, 83, 0.75), 0 0 35px rgba(0, 230, 83, 0.45);
+}
+
+.text-pure-white {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.glow-neon-green, .glow-lime-bright, .glow-accent {
+  box-shadow: 0 0 30px rgba(0, 230, 83, 0.45);
+}
+
+.glow-lime-sm {
+  box-shadow: 0 0 15px rgba(0, 230, 83, 0.25);
+}
+
+.glow-lime {
+  box-shadow: 0 0 30px rgba(0, 230, 83, 0.35);
+}
+
+.glow-lime-lg {
+  box-shadow: 0 0 50px rgba(0, 230, 83, 0.5);
+}
+
+.text-glow-lime {
+  text-shadow: 0 0 20px rgba(0, 230, 83, 0.65), 0 0 40px rgba(0, 230, 83, 0.3);
+}
+
+.border-glow-lime {
+  border-color: rgba(0, 230, 83, 0.4);
+  box-shadow: 0 0 20px rgba(0, 230, 83, 0.2);
+}
+
+.border-glow-lime-hover:hover {
+  border-color: rgba(0, 230, 83, 0.8);
+  box-shadow: 0 0 30px rgba(0, 230, 83, 0.4);
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(14, 23, 17, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+}
+
+.glass-panel-elevated {
+  background: rgba(19, 31, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(163, 230, 53, 0.25);
+}
