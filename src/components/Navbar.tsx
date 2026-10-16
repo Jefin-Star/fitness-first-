@@ -13,6 +13,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
     { label: "About", href: "#about" },
     { label: "Plans", href: "#plans" },
     { label: "Coaching", href: "#coaching" },
+    { label: "Diet Plan", href: "#diet-plan" },
+    { label: "Health Guide", href: "#health-guide" },
     { label: "Schedule", href: "#schedule" },
     { label: "Contact", href: "#contact" },
   ];

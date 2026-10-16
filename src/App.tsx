@@ -5,6 +5,8 @@ import { AboutSection } from './components/AboutSection.tsx';
 import { MembershipPlans } from './components/MembershipPlans.tsx';
 import { FitnessCalculator } from './components/FitnessCalculator.tsx';
 import { OperatingHours } from './components/OperatingHours.tsx';
+import { DietPlanSection } from './components/DietPlanSection.tsx';
+import { QuickHealthAndMacroCalculator } from './components/QuickHealthAndMacroCalculator.tsx';
 import { RegistrationForm } from './components/RegistrationForm.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -46,6 +48,12 @@ export default function App() {
 
         {/* Interactive BMI & Program Recommender */}
         <FitnessCalculator onSelectPlan={handleSelectPlan} />
+
+        {/* Diet Plan & Macro Guide */}
+        <DietPlanSection />
+
+        {/* Quick Health & Macro Guide · Male & Female */}
+        <QuickHealthAndMacroCalculator onSelectPlan={handleSelectPlan} />
 
         {/* Operating Hours & Timings */}
         <OperatingHours />

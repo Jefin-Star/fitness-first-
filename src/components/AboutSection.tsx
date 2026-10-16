@@ -175,7 +175,7 @@ export const AboutSection: React.FC = () => {
           <div className="group rounded-2xl bg-[#0e1611] border border-lime-400/20 hover:border-lime-400/50 transition-all duration-300 overflow-hidden flex flex-col shadow-lg">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/regenerated_image_1792080256338.jpg"
+                src="/src/assets/images/regenerated_image_1792130781489.webp"
                 alt="Cardio Conditioning Floor at FITNESS FIRST"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
