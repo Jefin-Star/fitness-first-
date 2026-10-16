@@ -137,7 +137,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
 
   // Generate WhatsApp message content
   const getWhatsAppUrl = () => {
-    const text = `*New Membership Registration — FITNESS FIRST FITNESS CENTRE*
+    const text = `*New Membership Registration — Team Fitness First*
 ---------------------------------------
 *Registration Ref:* ${submissionId || 'New'}
 *Full Name:* ${form.fullName}
@@ -218,7 +218,7 @@ ${form.fullName}`;
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold uppercase text-xs sm:text-sm tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] shadow-[0_0_25px_rgba(0,230,83,0.5)] flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold uppercase text-xs sm:text-sm tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] shadow-[0_0_25px_rgba(0,230,83,0.5)] flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 text-black" />
                 <span>Confirm Instantly on WhatsApp</span>
@@ -437,7 +437,7 @@ ${form.fullName}`;
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 px-6 rounded-xl text-sm sm:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] transition-all shadow-[0_0_25px_rgba(0,230,83,0.5)] hover:shadow-[0_0_35px_rgba(0,230,83,0.75)] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-4 px-6 rounded-xl text-sm sm:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] transition-all shadow-[0_0_25px_rgba(0,230,83,0.5)] hover:shadow-[0_0_35px_rgba(0,230,83,0.75)] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span>Processing Registration...</span>

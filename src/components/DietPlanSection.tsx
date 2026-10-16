@@ -64,19 +64,19 @@ export const DietPlanSection: React.FC = () => {
   ];
 
   return (
-    <section id="diet-plan" className="py-24 bg-[#080d0a] relative overflow-hidden border-t border-[#00E653]/15">
+    <section id="diet-plan" className="py-24 bg-[#080d0a] relative overflow-hidden border-t border-[#00E85B]/15">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00E653]/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00E85B]/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#00E653] mb-2 flex items-center justify-center gap-1.5">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#00E85B] mb-2 flex items-center justify-center gap-1.5">
             <Sparkles className="w-4 h-4" />
             Nutrition & Macronutrient Guide
           </p>
           <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-[#FFFFFF] tracking-tight uppercase">
-            Professional <span className="text-[#00E653]">Diet Plan</span> Sources
+            Professional <span className="text-[#00E85B]">Diet Plan</span> Sources
           </h2>
           <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
             Fuel your hypertrophy, fat loss, and muscle recovery with high-quality carbohydrate, lean protein, and healthy fat sources recommended by Team Fitness First.
@@ -85,12 +85,12 @@ export const DietPlanSection: React.FC = () => {
 
         {/* Category Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-xl bg-[#0e1711] border border-[#00E653]/30 shadow-lg">
+          <div className="inline-flex p-1.5 rounded-xl bg-[#0e1711] border border-[#00E85B]/30 shadow-lg">
             <button
               onClick={() => setActiveTab('carbs')}
               className={`px-6 py-3 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'carbs'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -101,7 +101,7 @@ export const DietPlanSection: React.FC = () => {
               onClick={() => setActiveTab('protein')}
               className={`px-6 py-3 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'protein'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -112,7 +112,7 @@ export const DietPlanSection: React.FC = () => {
               onClick={() => setActiveTab('fats')}
               className={`px-6 py-3 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'fats'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -128,9 +128,9 @@ export const DietPlanSection: React.FC = () => {
           {activeTab === 'carbs' && (
             <div className="space-y-8 animate-in fade-in duration-300">
               {/* Best Recommendation Banner */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E653]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E85B]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <span className="text-xs uppercase font-bold text-[#00E653] tracking-widest block mb-1">
+                  <span className="text-xs uppercase font-bold text-[#00E85B] tracking-widest block mb-1">
                     Top Recommendations
                   </span>
                   <h4 className="font-orbitron font-bold text-lg sm:text-xl text-[#FFFFFF]">
@@ -139,7 +139,7 @@ export const DietPlanSection: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {['Oats', 'Sweet Potato', 'Brown Rice/White Rice', 'Apple', 'Papaya', 'Quinoa'].map((item) => (
-                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E653]/40 text-xs font-bold text-[#00E653]">
+                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E85B]/40 text-xs font-bold text-[#00E85B]">
                       ✓ {item}
                     </span>
                   ))}
@@ -153,8 +153,8 @@ export const DietPlanSection: React.FC = () => {
                     key={idx}
                     className={`p-5 rounded-xl bg-[#0e1611]/80 border transition-all flex items-center justify-between ${
                       food.isBest
-                        ? 'border-[#00E653]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
-                        : 'border-[#00E653]/20 hover:border-[#00E653]/40'
+                        ? 'border-[#00E85B]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
+                        : 'border-[#00E85B]/20 hover:border-[#00E85B]/40'
                     }`}
                   >
                     <div>
@@ -163,14 +163,14 @@ export const DietPlanSection: React.FC = () => {
                           {food.name}
                         </span>
                         {food.isBest && (
-                          <span className="px-1.5 py-0.5 rounded bg-[#00E653]/20 text-[#00E653] text-[10px] font-extrabold uppercase">
+                          <span className="px-1.5 py-0.5 rounded bg-[#00E85B]/20 text-[#00E85B] text-[10px] font-extrabold uppercase">
                             Best
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-slate-400 mt-0.5">Per {food.serving}</p>
                     </div>
-                    <span className="font-mono text-sm font-bold text-[#00E653] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E653]/30">
+                    <span className="font-mono text-sm font-bold text-[#00E85B] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E85B]/30">
                       {food.amount}
                     </span>
                   </div>
@@ -183,9 +183,9 @@ export const DietPlanSection: React.FC = () => {
           {activeTab === 'protein' && (
             <div className="space-y-8 animate-in fade-in duration-300">
               {/* Best Recommendation Banner */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E653]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E85B]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <span className="text-xs uppercase font-bold text-[#00E653] tracking-widest block mb-1">
+                  <span className="text-xs uppercase font-bold text-[#00E85B] tracking-widest block mb-1">
                     Top Recommendations
                   </span>
                   <h4 className="font-orbitron font-bold text-lg sm:text-xl text-[#FFFFFF]">
@@ -194,7 +194,7 @@ export const DietPlanSection: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {['Chicken Breast', 'Egg White', 'Fish', 'Whey Protein', 'Greek Yogurt', 'Soy Chunks'].map((item) => (
-                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E653]/40 text-xs font-bold text-[#00E653]">
+                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E85B]/40 text-xs font-bold text-[#00E85B]">
                       ✓ {item}
                     </span>
                   ))}
@@ -208,8 +208,8 @@ export const DietPlanSection: React.FC = () => {
                     key={idx}
                     className={`p-5 rounded-xl bg-[#0e1611]/80 border transition-all flex items-center justify-between ${
                       food.isBest
-                        ? 'border-[#00E653]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
-                        : 'border-[#00E653]/20 hover:border-[#00E653]/40'
+                        ? 'border-[#00E85B]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
+                        : 'border-[#00E85B]/20 hover:border-[#00E85B]/40'
                     }`}
                   >
                     <div>
@@ -218,14 +218,14 @@ export const DietPlanSection: React.FC = () => {
                           {food.name}
                         </span>
                         {food.isBest && (
-                          <span className="px-1.5 py-0.5 rounded bg-[#00E653]/20 text-[#00E653] text-[10px] font-extrabold uppercase">
+                          <span className="px-1.5 py-0.5 rounded bg-[#00E85B]/20 text-[#00E85B] text-[10px] font-extrabold uppercase">
                             Best
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-slate-400 mt-0.5">Per {food.serving}</p>
                     </div>
-                    <span className="font-mono text-sm font-bold text-[#00E653] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E653]/30">
+                    <span className="font-mono text-sm font-bold text-[#00E85B] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E85B]/30">
                       {food.amount}
                     </span>
                   </div>
@@ -238,9 +238,9 @@ export const DietPlanSection: React.FC = () => {
           {activeTab === 'fats' && (
             <div className="space-y-8 animate-in fade-in duration-300">
               {/* Best Recommendation Banner */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E653]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-[#0e1b12] to-[#0a140d] border border-[#00E85B]/40 shadow-[0_0_30px_rgba(0,230,83,0.15)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <span className="text-xs uppercase font-bold text-[#00E653] tracking-widest block mb-1">
+                  <span className="text-xs uppercase font-bold text-[#00E85B] tracking-widest block mb-1">
                     Top Recommendations
                   </span>
                   <h4 className="font-orbitron font-bold text-lg sm:text-xl text-[#FFFFFF]">
@@ -249,7 +249,7 @@ export const DietPlanSection: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {['Olive Oil', 'Almonds', 'Walnuts', 'Flax Seeds', 'Chia Seeds', 'Avocado'].map((item) => (
-                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E653]/40 text-xs font-bold text-[#00E653]">
+                    <span key={item} className="px-3 py-1 rounded-lg bg-black/60 border border-[#00E85B]/40 text-xs font-bold text-[#00E85B]">
                       ✓ {item}
                     </span>
                   ))}
@@ -263,8 +263,8 @@ export const DietPlanSection: React.FC = () => {
                     key={idx}
                     className={`p-5 rounded-xl bg-[#0e1611]/80 border transition-all flex items-center justify-between ${
                       food.isBest
-                        ? 'border-[#00E653]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
-                        : 'border-[#00E653]/20 hover:border-[#00E653]/40'
+                        ? 'border-[#00E85B]/60 shadow-[0_0_20px_rgba(0,230,83,0.15)] bg-[#0e1b12]/90'
+                        : 'border-[#00E85B]/20 hover:border-[#00E85B]/40'
                     }`}
                   >
                     <div>
@@ -273,14 +273,14 @@ export const DietPlanSection: React.FC = () => {
                           {food.name}
                         </span>
                         {food.isBest && (
-                          <span className="px-1.5 py-0.5 rounded bg-[#00E653]/20 text-[#00E653] text-[10px] font-extrabold uppercase">
+                          <span className="px-1.5 py-0.5 rounded bg-[#00E85B]/20 text-[#00E85B] text-[10px] font-extrabold uppercase">
                             Best
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-slate-400 mt-0.5">Per {food.serving}</p>
                     </div>
-                    <span className="font-mono text-sm font-bold text-[#00E653] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E653]/30">
+                    <span className="font-mono text-sm font-bold text-[#00E85B] bg-black/50 px-3 py-1.5 rounded-lg border border-[#00E85B]/30">
                       {food.amount}
                     </span>
                   </div>

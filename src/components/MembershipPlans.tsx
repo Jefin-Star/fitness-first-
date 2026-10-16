@@ -55,7 +55,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
               onClick={() => setActiveCategory('memberships')}
               className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                 activeCategory === 'memberships'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -65,7 +65,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
               onClick={() => setActiveCategory('personal')}
               className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                 activeCategory === 'personal'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -75,7 +75,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
               onClick={() => setActiveCategory('premium')}
               className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                 activeCategory === 'premium'
-                  ? 'bg-[#00E653] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
+                  ? 'bg-[#00E85B] text-black shadow-[0_0_20px_rgba(0,230,83,0.4)]'
                   : 'text-slate-300 hover:text-white'
               }`}
             >
@@ -209,7 +209,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
                       onClick={() => onSelectPlan(plan.name)}
                       className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer ${
                         isYearly
-                          ? 'bg-[#00E653] hover:bg-[#00ff5c] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
+                          ? 'bg-[#00E85B] hover:bg-[#00ff5c] text-black shadow-[0_0_20px_rgba(0,230,83,0.45)]'
                           : 'bg-lime-950/60 hover:bg-lime-900/60 text-lime-300 border border-lime-400/30 hover:border-lime-400'
                       }`}
                     >
@@ -296,7 +296,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
 
                   <button
                     onClick={() => onSelectPlan(plan.name)}
-                    className="w-full py-3.5 px-4 rounded-xl text-sm font-bold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.45)] flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-4 rounded-xl text-sm font-bold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.45)] flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Book Personal Training</span>
                     <ArrowRight className="w-4 h-4" />
@@ -317,7 +317,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
                   <Award className="w-8 h-8" />
                 </div>
                 <div className="text-center md:text-left space-y-2">
-                  <div className="inline-block px-3 py-1 rounded bg-[#00E653]/10 text-[#00E653] text-xs font-bold uppercase tracking-wider">
+                  <div className="inline-block px-3 py-1 rounded bg-[#00E85B]/10 text-[#00E85B] text-xs font-bold uppercase tracking-wider">
                     Official Executive Leadership & Certifications
                   </div>
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
@@ -327,22 +327,22 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
                     Direct mentorship by BBFAT District Secretary & BBAK State Treasurer with verified national credentials:
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1 justify-center md:justify-start text-xs font-semibold">
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-white font-bold">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-white font-bold">
                       CCPFT
                     </span>
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-white font-bold">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-white font-bold">
                       CCBBC
                     </span>
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-white">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-white">
                       Skill India Level 4
                     </span>
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-white">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-white">
                       EREPS Level 4
                     </span>
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-[#00E653] font-bold">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-[#00E85B] font-bold">
                       Junior National Medalist
                     </span>
-                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E653]/30 text-[#00E653] font-bold">
+                    <span className="px-3 py-1 rounded bg-black/50 border border-[#00E85B]/30 text-[#00E85B] font-bold">
                       BBAK State Judge
                     </span>
                   </div>
@@ -408,7 +408,7 @@ export const MembershipPlans: React.FC<MembershipPlansProps> = ({ onSelectPlan }
 
                   <button
                     onClick={() => onSelectPlan(pack.name)}
-                    className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.4)] flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Reserve Package</span>
                     <ArrowRight className="w-4 h-4" />

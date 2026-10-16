@@ -39,8 +39,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
           <div className="h-10 flex items-center justify-center group-hover:scale-105 transition-transform">
             <MpLogo className="h-8 w-auto" glow={true} />
           </div>
-          <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-[#FFFFFF] group-hover:text-[#00E653] transition-colors uppercase">
-            Team Fitness First
+          <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight uppercase">
+            <span className="text-[#FFFFFF]">TEAM </span>
+            <span className="text-[#00E85B] drop-shadow-[0_0_12px_rgba(0,232,91,0.55)]">FITNESS FIRST</span>
           </span>
         </a>
 
@@ -51,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="hover:text-[#00E653] transition-colors whitespace-nowrap shrink-0 py-1"
+              className="hover:text-[#00E85B] transition-colors whitespace-nowrap shrink-0 py-1"
             >
               {link.label}
             </a>
@@ -62,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={onSelectPlanClick}
-            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] rounded-lg transition-all shadow-[0_0_20px_rgba(0,230,83,0.5)] hover:shadow-[0_0_30px_rgba(0,230,83,0.7)] active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] rounded-lg transition-all shadow-[0_0_20px_rgba(0,230,83,0.5)] hover:shadow-[0_0_30px_rgba(0,230,83,0.7)] active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
           >
             Join Now
             <ArrowUpRight className="w-4 h-4" />
@@ -101,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
                 setMobileMenuOpen(false);
                 onSelectPlanClick();
               }}
-              className="w-full flex items-center justify-center gap-2 py-3 text-sm font-bold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] rounded-lg shadow-[0_0_20px_rgba(0,230,83,0.5)] transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-3 text-sm font-bold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] rounded-lg shadow-[0_0_20px_rgba(0,230,83,0.5)] transition-all cursor-pointer"
             >
               Join Now
               <ArrowUpRight className="w-4 h-4" />

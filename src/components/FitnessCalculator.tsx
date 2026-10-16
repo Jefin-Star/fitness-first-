@@ -60,37 +60,92 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onSelectPl
                 Adjust your stats below to calculate your current body mass index and receive a personalized program recommendation.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {/* Height Slider */}
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-300 mb-1.5">
-                    <span>Height</span>
-                    <span className="text-lime-400 font-mono tabular-nums">{heightCm} cm ({Math.floor(heightCm / 30.48)}' {Math.round((heightCm % 30.48) / 2.54)}")</span>
+                <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/20">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                    <span className="uppercase tracking-wider">Height</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">
+                        {heightCm} cm
+                      </span>
+                      <span className="text-slate-400 text-[11px] font-mono">
+                        ({Math.floor(heightCm / 30.48)}' {Math.round((heightCm % 30.48) / 2.54)}")
+                      </span>
+                    </div>
                   </div>
-                  <input
-                    type="range"
-                    min="140"
-                    max="210"
-                    value={heightCm}
-                    onChange={(e) => setHeightCm(Number(e.target.value))}
-                    className="w-full accent-lime-400 cursor-pointer"
-                  />
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setHeightCm((prev) => Math.max(120, prev - 1))}
+                      className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                      aria-label="Decrease height"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="range"
+                      min="120"
+                      max="225"
+                      value={heightCm}
+                      onChange={(e) => setHeightCm(Number(e.target.value))}
+                      className="w-full accent-[#00E85B] h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setHeightCm((prev) => Math.min(225, prev + 1))}
+                      className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                      aria-label="Increase height"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>120 cm</span>
+                    <span>172 cm</span>
+                    <span>225 cm</span>
+                  </div>
                 </div>
 
                 {/* Weight Slider */}
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-300 mb-1.5">
-                    <span>Current Weight</span>
-                    <span className="text-lime-400 font-mono tabular-nums">{weightKg} kg</span>
+                <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/20">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                    <span className="uppercase tracking-wider">Current Weight</span>
+                    <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">
+                      {weightKg} kg
+                    </span>
                   </div>
-                  <input
-                    type="range"
-                    min="40"
-                    max="140"
-                    value={weightKg}
-                    onChange={(e) => setWeightKg(Number(e.target.value))}
-                    className="w-full accent-lime-400 cursor-pointer"
-                  />
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setWeightKg((prev) => Math.max(35, prev - 1))}
+                      className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                      aria-label="Decrease weight"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="range"
+                      min="35"
+                      max="180"
+                      value={weightKg}
+                      onChange={(e) => setWeightKg(Number(e.target.value))}
+                      className="w-full accent-[#00E85B] h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setWeightKg((prev) => Math.min(180, prev + 1))}
+                      className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                      aria-label="Increase weight"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>35 kg</span>
+                    <span>70 kg</span>
+                    <span>180 kg</span>
+                  </div>
                 </div>
 
                 {/* Primary Objective */}
@@ -193,7 +248,7 @@ export const FitnessCalculator: React.FC<FitnessCalculatorProps> = ({ onSelectPl
               <button
                 type="button"
                 onClick={() => onSelectPlan(recommendedPlan)}
-                className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.45)] flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] transition-all shadow-[0_0_20px_rgba(0,230,83,0.45)] flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Select Recommended Plan</span>
                 <ArrowRight className="w-4 h-4" />

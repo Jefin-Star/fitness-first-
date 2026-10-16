@@ -180,7 +180,7 @@ export const ContactSection: React.FC = () => {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="FITNESS FIRST FITNESS CENTRE Google Map Location"
+                title="Team Fitness First Google Map Location"
                 className="w-full h-full filter invert-[0.88] hue-rotate-180 contrast-125"
               />
             </div>

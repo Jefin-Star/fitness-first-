@@ -8,7 +8,7 @@ export const FloatingWhatsApp: React.FC = () => {
       href={GYM_CONTACT.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-40 p-3.5 bg-[#00E653] hover:bg-[#00ff5c] text-black rounded-full shadow-[0_0_25px_rgba(0,230,83,0.55)] hover:shadow-[0_0_35px_rgba(0,230,83,0.85)] transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-40 p-3.5 bg-[#00E85B] hover:bg-[#00ff5c] text-black rounded-full shadow-[0_0_25px_rgba(0,230,83,0.55)] hover:shadow-[0_0_35px_rgba(0,230,83,0.85)] transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center group"
       aria-label="Chat on WhatsApp with FITNESS FIRST"
     >
       <MessageSquare className="w-6 h-6 fill-current text-black" />

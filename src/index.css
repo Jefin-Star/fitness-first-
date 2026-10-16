@@ -16,10 +16,10 @@
   }
 }
 
-/* Custom Luminous Glow Styles - #00E653 & #FFFFFF */
+/* Custom Luminous Glow Styles - #00E85B & #FFFFFF */
 .text-neon-green, .text-lime-bright, .text-accent {
-  color: #00E653;
-  text-shadow: 0 0 15px rgba(0, 230, 83, 0.75), 0 0 35px rgba(0, 230, 83, 0.45);
+  color: #00E85B;
+  text-shadow: 0 0 15px rgba(0, 232, 91, 0.75), 0 0 35px rgba(0, 232, 91, 0.45);
 }
 
 .text-pure-white {
@@ -28,33 +28,33 @@
 }
 
 .glow-neon-green, .glow-lime-bright, .glow-accent {
-  box-shadow: 0 0 30px rgba(0, 230, 83, 0.45);
+  box-shadow: 0 0 30px rgba(0, 232, 91, 0.45);
 }
 
 .glow-lime-sm {
-  box-shadow: 0 0 15px rgba(0, 230, 83, 0.25);
+  box-shadow: 0 0 15px rgba(0, 232, 91, 0.25);
 }
 
 .glow-lime {
-  box-shadow: 0 0 30px rgba(0, 230, 83, 0.35);
+  box-shadow: 0 0 30px rgba(0, 232, 91, 0.35);
 }
 
 .glow-lime-lg {
-  box-shadow: 0 0 50px rgba(0, 230, 83, 0.5);
+  box-shadow: 0 0 50px rgba(0, 232, 91, 0.5);
 }
 
 .text-glow-lime {
-  text-shadow: 0 0 20px rgba(0, 230, 83, 0.65), 0 0 40px rgba(0, 230, 83, 0.3);
+  text-shadow: 0 0 20px rgba(0, 232, 91, 0.65), 0 0 40px rgba(0, 232, 91, 0.3);
 }
 
 .border-glow-lime {
-  border-color: rgba(0, 230, 83, 0.4);
-  box-shadow: 0 0 20px rgba(0, 230, 83, 0.2);
+  border-color: rgba(0, 232, 91, 0.4);
+  box-shadow: 0 0 20px rgba(0, 232, 91, 0.2);
 }
 
 .border-glow-lime-hover:hover {
-  border-color: rgba(0, 230, 83, 0.8);
-  box-shadow: 0 0 30px rgba(0, 230, 83, 0.4);
+  border-color: rgba(0, 232, 91, 0.8);
+  box-shadow: 0 0 30px rgba(0, 232, 91, 0.4);
 }
 
 /* Glassmorphism surfaces */

@@ -28,7 +28,7 @@ export interface OperatingHour {
 }
 
 export const GYM_CONTACT = {
-  name: "FITNESS FIRST FITNESS CENTRE",
+  name: "Team Fitness First",
   tagline: "Build Your Strength. Transform Your Life.",
   shortName: "TEAM FITNESS FIRST",
   phoneDisplay: "+91 95443 32213",

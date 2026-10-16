@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                 <MpLogo className="h-8 w-auto" glow={true} />
               </div>
               <span className="font-display font-black text-xl text-white tracking-tight uppercase">
-                Fitness First <span className="text-lime-400">Fitness Centre</span>
+                Team <span className="text-[#00E85B]">Fitness First</span>
               </span>
             </div>
 
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} FITNESS FIRST FITNESS CENTRE. All rights reserved.
+            © {new Date().getFullYear()} Team Fitness First. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">

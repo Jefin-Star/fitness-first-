@@ -22,7 +22,7 @@ export const AboutSection: React.FC = () => {
             Elevating Fitness in <span className="text-lime-400">Thrissur</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Welcome to <strong className="text-white">FITNESS FIRST FITNESS CENTRE</strong> — where raw athletic passion meets modern biomechanical precision. We foster an inclusive, high-energy environment built for champions, fitness enthusiasts, and beginners alike.
+            Welcome to <strong className="text-white">TEAM <span className="text-[#00E85B]">FITNESS FIRST</span></strong> — where raw athletic passion meets modern biomechanical precision. We foster an inclusive, high-energy environment built for champions, fitness enthusiasts, and beginners alike.
           </p>
         </div>
 
@@ -31,13 +31,25 @@ export const AboutSection: React.FC = () => {
           <div className="absolute top-0 right-0 -mr-12 -mt-12 w-64 h-64 bg-lime-400/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Bodybuilder Image Container */}
-            <div className="lg:col-span-4 aspect-square w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none mx-auto relative overflow-hidden rounded-2xl border border-lime-400/30 shadow-[0_0_30px_rgba(0,230,83,0.2)] bg-black/60">
-              <img
-                src={bodybuilderImg}
-                alt="Leadership at FITNESS FIRST"
-                className="w-full h-full object-cover object-center"
-              />
+            {/* Trainer Photo & Name Container */}
+            <div className="lg:col-span-4 flex flex-col items-center">
+              <div className="mb-3 text-center">
+                <span className="text-xs font-bold text-[#00E85B] uppercase tracking-widest block mb-1">
+                  MEET YOUR TRAINER
+                </span>
+                <h4 className="font-orbitron font-extrabold text-2xl sm:text-3xl text-white uppercase tracking-wider">
+                  Melwin Paul
+                </h4>
+              </div>
+
+              {/* Photo Box */}
+              <div className="aspect-square w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none mx-auto relative overflow-hidden rounded-2xl border border-[#00E85B]/35 shadow-[0_0_30px_rgba(0,232,91,0.2)] bg-black/60">
+                <img
+                  src={bodybuilderImg}
+                  alt="Trainer Melwin Paul - Head Coach at TEAM FITNESS FIRST"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
 
             {/* Credential Details */}
@@ -52,12 +64,12 @@ export const AboutSection: React.FC = () => {
               </h3>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                FITNESS FIRST is directed with certified national-level acumen, bringing authentic competitive bodybuilding standards, injury-free lifting techniques, and elite conditioning knowledge right to our members:
+                TEAM FITNESS FIRST is directed with certified national-level acumen, bringing authentic competitive bodybuilding standards, injury-free lifting techniques, and elite conditioning knowledge right to our members:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-4 rounded-xl bg-black/40 border border-[#00E653]/30 flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#00E653] shrink-0 mt-0.5" />
+                <div className="p-4 rounded-xl bg-black/40 border border-[#00E85B]/30 flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00E85B] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wide">
                       District Secretary
@@ -68,8 +80,8 @@ export const AboutSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-[#00E653]/30 flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#00E653] shrink-0 mt-0.5" />
+                <div className="p-4 rounded-xl bg-black/40 border border-[#00E85B]/30 flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00E85B] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wide">
                       State Treasurer
@@ -83,37 +95,37 @@ export const AboutSection: React.FC = () => {
 
               {/* Certified Accreditations & Honors */}
               <div className="pt-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00E653] block mb-2.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00E85B] block mb-2.5">
                   Official Certifications & Competitive Laurels
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
                     <p className="text-xs font-extrabold text-[#FFFFFF] tracking-wider uppercase">CCPFT</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">Certified Personal Fitness Trainer</p>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
                     <p className="text-xs font-extrabold text-[#FFFFFF] tracking-wider uppercase">CCBBC</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">Certified Bodybuilding Coach</p>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
                     <p className="text-xs font-extrabold text-[#FFFFFF] tracking-wider uppercase">Skill India Level 4</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">Govt. NSDC Certified</p>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
                     <p className="text-xs font-extrabold text-[#FFFFFF] tracking-wider uppercase">EREPS Level 4</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">European Register of Exercise Pro</p>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
-                    <p className="text-xs font-extrabold text-[#00E653] tracking-wider uppercase">Junior National Medalist</p>
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
+                    <p className="text-xs font-extrabold text-[#00E85B] tracking-wider uppercase">Junior National Medalist</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">National Bodybuilding Podium</p>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E653]/50 transition-colors">
-                    <p className="text-xs font-extrabold text-[#00E653] tracking-wider uppercase">BBAK State Judge</p>
+                  <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 hover:border-[#00E85B]/50 transition-colors">
+                    <p className="text-xs font-extrabold text-[#00E85B] tracking-wider uppercase">BBAK State Judge</p>
                     <p className="text-[11px] text-slate-400 mt-0.5">Kerala Bodybuilding Judge</p>
                   </div>
                 </div>

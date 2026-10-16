@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
       <div className="absolute inset-0 z-0">
         <img
           src={heroGymImg}
-          alt="FITNESS FIRST FITNESS CENTRE interior"
+          alt="TEAM FITNESS FIRST interior"
           className="w-full h-full object-cover object-center opacity-45 brightness-95"
           referrerPolicy="no-referrer"
         />
@@ -24,30 +24,34 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
         <div className="absolute inset-0 bg-gradient-to-r from-[#080d0a] via-transparent to-[#080d0a]/80" />
         
         {/* Ambient Luminous Green Light Orbs */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00E653]/15 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#00E653]/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00E85B]/15 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#00E85B]/10 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
 
-        {/* Primary Gym Name */}
-        <h1 className="font-orbitron font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase max-w-4xl">
-          <div className="h-1.5 w-16 bg-[#00E653] mb-4" />
-          <span className="text-pure-white">TEAM</span> <br />
-          <span className="text-neon-green">
+        {/* Primary Gym Name - Clean without glow */}
+        <h1 className="font-orbitron font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase max-w-4xl [text-shadow:none]">
+          <div className="h-1.5 w-16 bg-[#00E85B] mb-4" />
+          <span className="text-white [text-shadow:none]">TEAM</span> <br />
+          <span className="text-[#00E85B] [text-shadow:none]">
             FITNESS FIRST
           </span>
           <div className="text-sm sm:text-lg md:text-xl font-medium tracking-[0.2em] text-white/90 mt-4 uppercase">
             FITNESS CENTER | AMALA NAGAR, THRISSUR
           </div>
+          <div className="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00E85B]/15 border border-[#00E85B]/50 text-[#00E85B] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(0,232,91,0.2)]">
+            <span className="w-2 h-2 rounded-full bg-[#00E85B]" />
+            Unisex & Family Gym
+          </div>
         </h1>
 
-        {/* Powerful Fitness Tagline */}
-        <p className="font-orbitron mt-6 text-base sm:text-xl md:text-2xl font-bold tracking-wider max-w-3xl text-balance">
-          <span className="text-pure-white">Build Your Strength. </span>
-          <span className="text-neon-green">Transform Your Life.</span>
+        {/* Powerful Fitness Tagline - Clean and Non-Glowing */}
+        <p className="font-orbitron mt-6 text-base sm:text-xl md:text-2xl font-bold tracking-wider max-w-3xl text-balance [text-shadow:none]">
+          <span className="text-white [text-shadow:none]">Build Your Strength. </span>
+          <span className="text-[#00E85B] [text-shadow:none]">Transform Your Life.</span>
         </p>
 
         {/* Subtitle / Value Proposition */}
@@ -59,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <button
             onClick={onJoinClick}
-            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E653] hover:bg-[#00ff5c] rounded-xl transition-all shadow-[0_0_30px_rgba(0,230,83,0.55)] hover:shadow-[0_0_45px_rgba(0,230,83,0.8)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] rounded-xl transition-all shadow-[0_0_30px_rgba(0,230,83,0.55)] hover:shadow-[0_0_45px_rgba(0,230,83,0.8)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 cursor-pointer"
           >
             <span>Join Now</span>
             <ArrowRight className="w-5 h-5 text-black" />
@@ -67,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
 
           <button
             onClick={onViewPlansClick}
-            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-bold uppercase tracking-wider text-[#FFFFFF] hover:text-[#00E653] bg-black/60 hover:bg-black/80 border border-[#00E653]/50 hover:border-[#00E653] rounded-xl transition-all backdrop-blur-md shadow-[0_0_20px_rgba(0,230,83,0.25)] flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-bold uppercase tracking-wider text-[#FFFFFF] hover:text-[#00E85B] bg-black/60 hover:bg-black/80 border border-[#00E85B]/50 hover:border-[#00E85B] rounded-xl transition-all backdrop-blur-md shadow-[0_0_20px_rgba(0,230,83,0.25)] flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>View Membership Plans</span>
           </button>

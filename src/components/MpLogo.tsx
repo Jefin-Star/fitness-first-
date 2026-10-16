@@ -16,7 +16,7 @@ export const MpLogo: React.FC<MpLogoProps> = ({
       {/* Subtle, soft ambient glow effect to blend seamlessly with the dark background */}
       {glow && (
         <div 
-          className="absolute -inset-1 bg-[#00E653]/25 blur-md rounded-full opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" 
+          className="absolute -inset-1 bg-[#00E85B]/25 blur-md rounded-full opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" 
           aria-hidden="true" 
         />
       )}
