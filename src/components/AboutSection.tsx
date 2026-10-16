@@ -1,6 +1,9 @@
 import React from 'react';
 import { Award, Dumbbell, Activity, Users, Shield, CheckCircle2 } from 'lucide-react';
 import { GYM_CONTACT } from '../data/gymData.ts';
+import bodybuilderImg from '../assets/images/regenerated_image_1792133513281.jpg';
+import strengthArenaImg from '../assets/images/gym_strength_training_1792079002410.jpg';
+import cardioSuiteImg from '../assets/images/regenerated_image_1792137189260.webp';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -31,7 +34,7 @@ export const AboutSection: React.FC = () => {
             {/* Bodybuilder Image Container */}
             <div className="lg:col-span-4 aspect-square w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none mx-auto relative overflow-hidden rounded-2xl border border-lime-400/30 shadow-[0_0_30px_rgba(0,230,83,0.2)] bg-black/60">
               <img
-                src="/src/assets/images/regenerated_image_1792133513281.jpg"
+                src={bodybuilderImg}
                 alt="Leadership at FITNESS FIRST"
                 className="w-full h-full object-cover object-center"
               />
@@ -125,7 +128,7 @@ export const AboutSection: React.FC = () => {
           <div className="group rounded-2xl bg-[#0e1611] border border-lime-400/20 hover:border-lime-400/50 transition-all duration-300 overflow-hidden flex flex-col shadow-lg">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/gym_strength_training_1792079002410.jpg"
+                src={strengthArenaImg}
                 alt="Strength Training Zone at FITNESS FIRST"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -170,7 +173,7 @@ export const AboutSection: React.FC = () => {
           <div className="group rounded-2xl bg-[#0e1611] border border-lime-400/20 hover:border-lime-400/50 transition-all duration-300 overflow-hidden flex flex-col shadow-lg">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/regenerated_image_1792137189260.webp"
+                src={cardioSuiteImg}
                 alt="Cardio Conditioning Floor at FITNESS FIRST"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"

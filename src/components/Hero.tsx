@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ChevronDown, Award, Clock, Flame, ShieldCheck } from 'lucide-react';
 import { GYM_CONTACT } from '../data/gymData.ts';
+import heroGymImg from '../assets/images/hero_gym_fitness_first_1792079001560.jpg';
 
 interface HeroProps {
   onJoinClick: () => void;
@@ -13,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
       {/* Background Image with Luminous Green Scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_gym_fitness_first_1792079001560.jpg"
+          src={heroGymImg}
           alt="FITNESS FIRST FITNESS CENTRE interior"
           className="w-full h-full object-cover object-center opacity-45 brightness-95"
           referrerPolicy="no-referrer"
