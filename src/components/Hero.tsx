@@ -29,33 +29,18 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Subtle Credential Tagline Bar & Badges */}
-        <div className="flex flex-col items-center gap-2 mb-6 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-[#00E653]/35 text-[#00E653] text-xs sm:text-sm font-medium backdrop-blur-md shadow-[0_0_20px_rgba(0,230,83,0.2)]">
-            <Award className="w-4 h-4 text-[#00E653] shrink-0" />
-            <span className="text-[#FFFFFF]">Under BBFAT District Secretary & BBAK State Treasurer Leadership</span>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs font-semibold text-slate-300">
-            <span className="text-[#00E653] font-bold">CCPFT</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-[#00E653] font-bold">CCBBC</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-white">Skill India Level 4</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-white">EREPS Level 4</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-[#00E653] font-bold">Junior National Medalist</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-white">BBAK State Judge</span>
-          </div>
-        </div>
+
 
         {/* Primary Gym Name */}
         <h1 className="font-orbitron font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase max-w-4xl">
-          <span className="text-pure-white">Fitness First</span> <br />
+          <div className="h-1.5 w-16 bg-[#00E653] mb-4" />
+          <span className="text-pure-white">TEAM</span> <br />
           <span className="text-neon-green">
-            Fitness Centre
+            FITNESS FIRST
           </span>
+          <div className="text-sm sm:text-lg md:text-xl font-medium tracking-[0.2em] text-white/90 mt-4 uppercase">
+            FITNESS CENTER | AMALA NAGAR, THRISSUR
+          </div>
         </h1>
 
         {/* Powerful Fitness Tagline */}
@@ -65,9 +50,8 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
         </p>
 
         {/* Subtitle / Value Proposition */}
-        <p className="mt-4 text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl text-balance font-normal leading-relaxed">
-          The premier strength, conditioning, and bodybuilding destination in Thrissur, Kerala. 
-          State-of-the-art power racks, cardio suite, and championship-tested coaching.
+        <p className="mt-4 text-sm sm:text-base md:text-lg text-[#E0E0E0] max-w-2xl text-balance font-normal leading-relaxed">
+          Professional training, strength equipment, cardio fitness and expert guidance for a healthier, stronger and more confident you.
         </p>
 
         {/* Action Buttons */}

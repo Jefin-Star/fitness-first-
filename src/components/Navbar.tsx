@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectPlanClick }) => {
             <MpLogo className="h-8 w-auto" glow={true} />
           </div>
           <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-[#FFFFFF] group-hover:text-[#00E653] transition-colors uppercase">
-            Fitness First
+            Team Fitness First
           </span>
         </a>
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { MpLogo } from './MpLogo.tsx';
 import { Award, Dumbbell, Activity, Users, Shield, CheckCircle2 } from 'lucide-react';
 import { GYM_CONTACT } from '../data/gymData.ts';
 
@@ -29,17 +28,13 @@ export const AboutSection: React.FC = () => {
           <div className="absolute top-0 right-0 -mr-12 -mt-12 w-64 h-64 bg-lime-400/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Logo & Embellishment */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 bg-[#080d0a]/70 rounded-xl border border-lime-400/20">
-              <div className="mb-4 flex items-center justify-center">
-                <MpLogo className="h-14 w-auto" glow={true} />
-              </div>
-              <h3 className="font-display font-black text-xl text-white tracking-wider uppercase">
-                Team Fitness First
-              </h3>
-              <p className="text-xs text-lime-400 font-semibold tracking-widest uppercase mt-1">
-                Official Athletic Emblem
-              </p>
+            {/* Bodybuilder Image Container */}
+            <div className="lg:col-span-4 aspect-square w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none mx-auto relative overflow-hidden rounded-2xl border border-lime-400/30 shadow-[0_0_30px_rgba(0,230,83,0.2)] bg-black/60">
+              <img
+                src="/src/assets/images/regenerated_image_1792133513281.jpg"
+                alt="Leadership at FITNESS FIRST"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             {/* Credential Details */}
@@ -54,7 +49,7 @@ export const AboutSection: React.FC = () => {
               </h3>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                FITNESS FIRST is directed with certified state-level acumen, bringing authentic competitive bodybuilding standards, injury-free lifting techniques, and elite conditioning knowledge right to our members:
+                FITNESS FIRST is directed with certified national-level acumen, bringing authentic competitive bodybuilding standards, injury-free lifting techniques, and elite conditioning knowledge right to our members:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -175,7 +170,7 @@ export const AboutSection: React.FC = () => {
           <div className="group rounded-2xl bg-[#0e1611] border border-lime-400/20 hover:border-lime-400/50 transition-all duration-300 overflow-hidden flex flex-col shadow-lg">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/regenerated_image_1792130781489.webp"
+                src="/src/assets/images/regenerated_image_1792137189260.webp"
                 alt="Cardio Conditioning Floor at FITNESS FIRST"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
