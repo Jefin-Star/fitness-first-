@@ -16,7 +16,7 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
   const [kcalHeightCm, setKcalHeightCm] = useState<number>(172);
   const [kcalWeightKg, setKcalWeightKg] = useState<number>(70);
   const [activityLevel, setActivityLevel] = useState<number>(1.375);
-  const [goalType, setGoalType] = useState<'lose' | 'maintain' | 'gain'>('maintain');
+  const [goalType, setGoalType] = useState<'muscle' | 'recomp' | 'fatloss'>('muscle');
 
   const bmr = kcalGender === 'male'
     ? (10 * kcalWeightKg) + (6.25 * kcalHeightCm) - (5 * kcalAge) + 5
@@ -24,8 +24,8 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
 
   const tdee = Math.round(bmr * activityLevel);
   let targetKcal = tdee;
-  if (goalType === 'lose') targetKcal = tdee - 400;
-  if (goalType === 'gain') targetKcal = tdee + 350;
+  if (goalType === 'fatloss') targetKcal = tdee - 450;
+  if (goalType === 'muscle') targetKcal = tdee + 350;
 
   const macroProteinG = Math.round(kcalWeightKg * 2.0);
   const proteinCalories = macroProteinG * 4;
@@ -36,16 +36,18 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
 
   // 3. Daily Macro Guide Dedicated Interactive State
   const [macroGender, setMacroGender] = useState<'male' | 'female'>('male');
+  const [macroAge, setMacroAge] = useState<number>(25);
   const [macroHeightCm, setMacroHeightCm] = useState<number>(172);
   const [macroWeightKg, setMacroWeightKg] = useState<number>(70);
   const [macroGoal, setMacroGoal] = useState<'muscle' | 'recomp' | 'fatloss'>('muscle');
+  const [macroActivityMultiplier, setMacroActivityMultiplier] = useState<number>(1.375);
 
   // Daily Macro Guide dynamic calculations
   const macroBmr = macroGender === 'male'
-    ? (10 * macroWeightKg) + (6.25 * macroHeightCm) - (5 * 26) + 5
-    : (10 * macroWeightKg) + (6.25 * macroHeightCm) - (5 * 26) - 161;
+    ? (10 * macroWeightKg) + (6.25 * macroHeightCm) - (5 * macroAge) + 5
+    : (10 * macroWeightKg) + (6.25 * macroHeightCm) - (5 * macroAge) - 161;
 
-  const macroTdee = Math.round(macroBmr * 1.45);
+  const macroTdee = Math.round(macroBmr * macroActivityMultiplier);
   let dedicatedTargetKcal = macroTdee;
   let proteinRatio = 2.2;
 
@@ -383,42 +385,94 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Form Inputs */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase mb-1">Sex</label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setKcalGender('male')}
-                    className={`py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      kcalGender === 'male' ? 'bg-[#00E85B] text-black' : 'bg-black/50 text-slate-300 border border-white/10'
-                    }`}
+            <div className="lg:col-span-7 space-y-4">
+              {/* Sex & Training Focus Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 uppercase mb-1.5">Sex</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setKcalGender('male')}
+                      className={`py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        kcalGender === 'male' ? 'bg-[#00E85B] text-black font-extrabold shadow-[0_0_15px_rgba(0,230,83,0.3)]' : 'bg-black/50 text-slate-300 border border-white/10'
+                      }`}
+                    >
+                      Male
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setKcalGender('female')}
+                      className={`py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        kcalGender === 'female' ? 'bg-[#00E85B] text-black font-extrabold shadow-[0_0_15px_rgba(0,230,83,0.3)]' : 'bg-black/50 text-slate-300 border border-white/10'
+                      }`}
+                    >
+                      Female
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 uppercase mb-1.5">Training Focus</label>
+                  <div className="grid grid-cols-3 gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setGoalType('muscle')}
+                      className={`py-2 px-1 rounded-lg text-[11px] font-bold uppercase tracking-tight transition-all cursor-pointer text-center ${
+                        goalType === 'muscle' ? 'bg-[#00E85B] text-black font-extrabold' : 'bg-black/50 text-slate-300 border border-white/10'
+                      }`}
+                    >
+                      Muscle
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setGoalType('recomp')}
+                      className={`py-2 px-1 rounded-lg text-[11px] font-bold uppercase tracking-tight transition-all cursor-pointer text-center ${
+                        goalType === 'recomp' ? 'bg-[#00E85B] text-black font-extrabold' : 'bg-black/50 text-slate-300 border border-white/10'
+                      }`}
+                    >
+                      Recomp
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setGoalType('fatloss')}
+                      className={`py-2 px-1 rounded-lg text-[11px] font-bold uppercase tracking-tight transition-all cursor-pointer text-center ${
+                        goalType === 'fatloss' ? 'bg-[#00E85B] text-black font-extrabold' : 'bg-black/50 text-slate-300 border border-white/10'
+                      }`}
+                    >
+                      Fat Loss
+                    </button>
+                  </div>
+                </div>
+
+                {/* Activity Level Dropdown */}
+                <div className="sm:col-span-2 pt-1">
+                  <label className="block text-xs font-bold text-slate-300 uppercase mb-1.5">Activity Level</label>
+                  <select
+                    value={activityLevel}
+                    onChange={(e) => setActivityLevel(Number(e.target.value))}
+                    className="w-full px-4 py-2.5 rounded-lg bg-black/50 border border-[#00E85B]/30 text-white text-xs sm:text-sm font-medium focus:outline-none focus:border-[#00E85B] cursor-pointer"
                   >
-                    Male
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setKcalGender('female')}
-                    className={`py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      kcalGender === 'female' ? 'bg-[#00E85B] text-black' : 'bg-black/50 text-slate-300 border border-white/10'
-                    }`}
-                  >
-                    Female
-                  </button>
+                    <option value={1.2}>Sedentary (little or no exercise)</option>
+                    <option value={1.375}>Lightly Active (light exercise 1-3 days/week)</option>
+                    <option value={1.55}>Moderately Active (moderate exercise 3-5 days/week)</option>
+                    <option value={1.725}>Very Active (hard exercise 6-7 days/week)</option>
+                  </select>
                 </div>
               </div>
 
               {/* Age Slider */}
-              <div className="p-3 rounded-xl bg-black/40 border border-[#00E85B]/25">
-                <div className="flex justify-between text-xs font-bold text-slate-300 uppercase mb-2">
-                  <span>Age</span>
-                  <span className="text-[#00E85B] font-mono text-sm font-extrabold">{kcalAge} yrs</span>
+              <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/25">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                  <span className="uppercase tracking-wider">Age (Interactive Slider)</span>
+                  <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">{kcalAge} yrs</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     onClick={() => setKcalAge((prev) => Math.max(15, prev - 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Decrease age"
                   >
                     -
                   </button>
@@ -433,24 +487,34 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
                   <button
                     type="button"
                     onClick={() => setKcalAge((prev) => Math.min(80, prev + 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Increase age"
                   >
                     +
                   </button>
                 </div>
+                <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <span>15 yrs</span>
+                  <span>25 yrs</span>
+                  <span>80 yrs</span>
+                </div>
               </div>
 
               {/* Height Slider */}
-              <div className="p-3 rounded-xl bg-black/40 border border-[#00E85B]/25">
-                <div className="flex justify-between text-xs font-bold text-slate-300 uppercase mb-2">
-                  <span>Height</span>
-                  <span className="text-[#00E85B] font-mono text-sm font-extrabold">{kcalHeightCm} cm</span>
+              <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/25">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                  <span className="uppercase tracking-wider">Height (Interactive Slider)</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">{kcalHeightCm} cm</span>
+                    <span className="text-slate-400 text-[11px] font-mono">({Math.floor(kcalHeightCm / 30.48)}' {Math.round((kcalHeightCm % 30.48) / 2.54)}")</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     onClick={() => setKcalHeightCm((prev) => Math.max(120, prev - 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Decrease height"
                   >
                     -
                   </button>
@@ -465,24 +529,31 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
                   <button
                     type="button"
                     onClick={() => setKcalHeightCm((prev) => Math.min(225, prev + 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Increase height"
                   >
                     +
                   </button>
                 </div>
+                <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <span>120 cm</span>
+                  <span>172 cm</span>
+                  <span>225 cm</span>
+                </div>
               </div>
 
               {/* Weight Slider */}
-              <div className="sm:col-span-2 p-3 rounded-xl bg-black/40 border border-[#00E85B]/25">
-                <div className="flex justify-between text-xs font-bold text-slate-300 uppercase mb-2">
-                  <span>Weight</span>
-                  <span className="text-[#00E85B] font-mono text-sm font-extrabold">{kcalWeightKg} kg</span>
+              <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/25">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                  <span className="uppercase tracking-wider">Weight (Interactive Slider)</span>
+                  <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">{kcalWeightKg} kg</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     onClick={() => setKcalWeightKg((prev) => Math.max(35, prev - 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Decrease weight"
                   >
                     -
                   </button>
@@ -497,57 +568,16 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
                   <button
                     type="button"
                     onClick={() => setKcalWeightKg((prev) => Math.min(180, prev + 1))}
-                    className="w-6 h-6 rounded bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black text-xs font-bold border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Increase weight"
                   >
                     +
                   </button>
                 </div>
-              </div>
-
-              <div className="sm:col-span-2">
-                <label className="block text-xs font-bold text-slate-300 uppercase mb-1">Activity Level</label>
-                <select
-                  value={activityLevel}
-                  onChange={(e) => setActivityLevel(Number(e.target.value))}
-                  className="w-full px-4 py-2.5 rounded-lg bg-black/50 border border-[#00E85B]/30 text-white text-sm focus:outline-none focus:border-[#00E85B]"
-                >
-                  <option value={1.2}>Sedentary (little or no exercise)</option>
-                  <option value={1.375}>Lightly Active (light exercise 1-3 days/week)</option>
-                  <option value={1.55}>Moderately Active (moderate exercise 3-5 days/week)</option>
-                  <option value={1.725}>Very Active (hard exercise 6-7 days/week)</option>
-                </select>
-              </div>
-
-              <div className="sm:col-span-2">
-                <label className="block text-xs font-bold text-slate-300 uppercase mb-1">Fitness Goal</label>
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setGoalType('lose')}
-                    className={`py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      goalType === 'lose' ? 'bg-[#00E85B] text-black' : 'bg-black/50 text-slate-300 border border-white/10'
-                    }`}
-                  >
-                    Fat Loss
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setGoalType('maintain')}
-                    className={`py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      goalType === 'maintain' ? 'bg-[#00E85B] text-black' : 'bg-black/50 text-slate-300 border border-white/10'
-                    }`}
-                  >
-                    Maintain
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setGoalType('gain')}
-                    className={`py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      goalType === 'gain' ? 'bg-[#00E85B] text-black' : 'bg-black/50 text-slate-300 border border-white/10'
-                    }`}
-                  >
-                    Muscle Gain
-                  </button>
+                <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <span>35 kg</span>
+                  <span>70 kg</span>
+                  <span>180 kg</span>
                 </div>
               </div>
             </div>
@@ -556,15 +586,31 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
             <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-xl bg-black/60 border border-[#00E85B]/40 text-center">
               <div>
                 <span className="text-xs uppercase font-bold text-[#00E85B] tracking-widest block mb-2">
-                  Estimated Daily Target
+                  Estimated Daily Caloric Target
                 </span>
                 <div className="font-orbitron font-black text-4xl sm:text-5xl text-[#FFFFFF] my-4">
                   {targetKcal} <span className="text-xl text-[#00E85B]">kcal / day</span>
                 </div>
-                <p className="text-xs text-slate-300">
-                  {goalType === 'lose' && 'Caloric deficit (~400 kcal below maintenance) for steady fat loss.'}
-                  {goalType === 'maintain' && 'Weight maintenance calories based on your daily activity.'}
-                  {goalType === 'gain' && 'Caloric surplus (~350 kcal above maintenance) to fuel hypertrophy.'}
+                <div className="p-3 rounded-lg bg-black/40 border border-white/10 text-left space-y-1.5 mb-4 text-xs">
+                  <div className="flex justify-between text-slate-300">
+                    <span>Basal Metabolic Rate (BMR):</span>
+                    <span className="font-mono text-white">{Math.round(bmr)} kcal</span>
+                  </div>
+                  <div className="flex justify-between text-slate-300">
+                    <span>Maintenance TDEE:</span>
+                    <span className="font-mono text-white">{tdee} kcal</span>
+                  </div>
+                  <div className="flex justify-between text-slate-300">
+                    <span>Goal Adjustment:</span>
+                    <span className={`font-mono font-bold ${goalType === 'fatloss' ? 'text-amber-400' : goalType === 'muscle' ? 'text-[#00E85B]' : 'text-slate-300'}`}>
+                      {goalType === 'fatloss' ? '-450 kcal (Deficit)' : goalType === 'muscle' ? '+350 kcal (Surplus)' : '±0 kcal (Maintenance)'}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {goalType === 'fatloss' && 'Caloric deficit (~450 kcal below maintenance) for steady, sustainable fat loss.'}
+                  {goalType === 'recomp' && 'Weight maintenance calories based on your personal activity level.'}
+                  {goalType === 'muscle' && 'Caloric surplus (~350 kcal above maintenance) to fuel athletic hypertrophy.'}
                 </p>
               </div>
 
@@ -656,6 +702,60 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
                       Fat Loss
                     </button>
                   </div>
+                </div>
+
+                {/* Activity Level Dropdown */}
+                <div className="sm:col-span-2 pt-1">
+                  <label className="block text-xs font-bold text-slate-300 uppercase mb-1.5">Activity Level</label>
+                  <select
+                    value={macroActivityMultiplier}
+                    onChange={(e) => setMacroActivityMultiplier(Number(e.target.value))}
+                    className="w-full px-4 py-2.5 rounded-lg bg-black/50 border border-[#00E85B]/30 text-white text-xs sm:text-sm font-medium focus:outline-none focus:border-[#00E85B] cursor-pointer"
+                  >
+                    <option value={1.2}>Sedentary (little or no exercise)</option>
+                    <option value={1.375}>Lightly Active (light exercise 1-3 days/week)</option>
+                    <option value={1.55}>Moderately Active (moderate exercise 3-5 days/week)</option>
+                    <option value={1.725}>Very Active (hard exercise 6-7 days/week)</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Age Slider */}
+              <div className="p-3.5 rounded-xl bg-black/40 border border-[#00E85B]/25">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-300 mb-2">
+                  <span className="uppercase tracking-wider">Age (Interactive Slider)</span>
+                  <span className="text-[#00E85B] font-mono text-sm font-extrabold tabular-nums">{macroAge} yrs</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setMacroAge((prev) => Math.max(15, prev - 1))}
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Decrease age"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="range"
+                    min="15"
+                    max="80"
+                    value={macroAge}
+                    onChange={(e) => setMacroAge(Number(e.target.value))}
+                    className="w-full accent-[#00E85B] h-2 bg-slate-800 rounded-lg cursor-pointer"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setMacroAge((prev) => Math.min(80, prev + 1))}
+                    className="w-7 h-7 rounded-lg bg-black/70 hover:bg-[#00E85B] text-slate-300 hover:text-black border border-white/10 hover:border-[#00E85B] text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                    aria-label="Increase age"
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <span>15 yrs</span>
+                  <span>25 yrs</span>
+                  <span>80 yrs</span>
                 </div>
               </div>
 
@@ -814,44 +914,6 @@ export const QuickHealthAndMacroCalculator: React.FC<{ onSelectPlan: (plan: stri
               </div>
               <p className="text-xs text-sky-400">
                 {dedicatedCarbCal} kcal (glycogen replenishment)
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        {/* TOOL 4: NUTRITION BASICS (Protein, Carbs & Fats Health Tips) */}
-        <div className="p-8 sm:p-10 rounded-2xl bg-[#09110d] border border-white/10">
-          <div className="flex items-center gap-2 text-[#00E85B] mb-2">
-            <Apple className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase tracking-wider">Nutrition Basics</span>
-          </div>
-          <h3 className="font-orbitron font-bold text-2xl sm:text-3xl text-[#FFFFFF] uppercase mb-4">
-            Health Tips: Protein, Carbs & Fats
-          </h3>
-          <p className="text-sm text-slate-300 mb-8">
-            Build a balanced diet to support training, recovery and everyday health. Your needs depend on body weight, activity, goals and total calories.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-300 text-sm">
-            <div className="p-6 rounded-xl bg-black/40 border border-[#00E85B]/20 space-y-2">
-              <h4 className="font-orbitron font-bold text-[#FFFFFF] text-base">1. Proteins</h4>
-              <p className="text-xs leading-relaxed text-slate-300">
-                Essential amino acids for muscle tissue repair, immune defense, and enzyme creation. Prioritize chicken breast, egg whites, fish, paneer, and whey protein.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-black/40 border border-[#00E85B]/20 space-y-2">
-              <h4 className="font-orbitron font-bold text-[#FFFFFF] text-base">2. Carbohydrates</h4>
-              <p className="text-xs leading-relaxed text-slate-300">
-                Primary fuel source for high-intensity lifting and explosive athletic performance. Choose complex options like oats, sweet potato, brown rice, and quinoa.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-black/40 border border-[#00E85B]/20 space-y-2">
-              <h4 className="font-orbitron font-bold text-[#FFFFFF] text-base">3. Healthy Fats</h4>
-              <p className="text-xs leading-relaxed text-slate-300">
-                Critical for testosterone regulation, joint lubrication, and hormone synthesis. Include almonds, walnuts, flax seeds, chia seeds, and extra virgin olive oil.
               </p>
             </div>
           </div>

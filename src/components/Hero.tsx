@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <button
             onClick={onJoinClick}
-            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] rounded-xl transition-all shadow-[0_0_30px_rgba(0,230,83,0.55)] hover:shadow-[0_0_45px_rgba(0,230,83,0.8)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 text-sm md:text-base font-extrabold uppercase tracking-wider text-black bg-[#00E85B] hover:bg-[#00ff5c] rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 cursor-pointer"
           >
             <span>Join Now</span>
             <ArrowRight className="w-5 h-5 text-black" />
