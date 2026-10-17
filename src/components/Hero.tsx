@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick, onViewPlansClick }) => 
           <div className="text-sm sm:text-lg md:text-xl font-medium tracking-[0.2em] text-white/90 mt-4 uppercase">
             FITNESS CENTER | AMALA NAGAR, THRISSUR
           </div>
-          <div className="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00E85B]/15 border border-[#00E85B]/50 text-[#00E85B] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(0,232,91,0.2)]">
+          <div className="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00E85B]/15 border border-[#00E85B]/50 text-[#00E85B] text-xs sm:text-sm font-extrabold tracking-widest uppercase [text-shadow:none]">
             <span className="w-2 h-2 rounded-full bg-[#00E85B]" />
             Unisex & Family Gym
           </div>

@@ -167,15 +167,15 @@ export const AboutSection: React.FC = () => {
               <ul className="mt-6 space-y-2 text-xs sm:text-sm text-slate-300">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
-                  Heavy-duty power racks & bench press stations
+                  Professional Strength Training Equipment
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
-                  Dumbbells from 2.5 kg up to 50 kg
+                  Multi-Functional Cable Training Stations
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
-                  Isolated selectorized cable towers
+                  Professional Dumbbell Training Zone
                 </li>
               </ul>
             </div>
@@ -205,7 +205,7 @@ export const AboutSection: React.FC = () => {
                   High-Performance Cardio & Conditioning
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Maximize stamina, burn fat, and boost cardiovascular health on high-end commercial treadmills, cross-trainers, and spin bikes with luminous ambient fitness lighting.
+                  Maximize stamina, burn fat, and boost cardiovascular health on high-end commercial treadmills, cross-trainers, and spin bikes with Modern & Motivating Workout Environment
                 </p>
               </div>
 
@@ -216,11 +216,11 @@ export const AboutSection: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
-                  Low-impact ellipticals & stationary bikes
+                  Endurance Conditioning
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
-                  Targeted heart-rate zone conditioning programs
+                  Modern and Motivating Workout Environment
                 </li>
               </ul>
             </div>
