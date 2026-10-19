@@ -92,8 +92,7 @@ export const MEMBERSHIP_PLANS: PricingPlan[] = [
     totalPrice: 1800,
     features: [
       "Full access to Heavy Weight Training Arena",
-      "Free Weights & Dumbbells up to 50kg",
-      "Locker room & shower amenities",
+      "Free Weights & professional dumbbell training zone",
       "Custom routine orientation",
       "One-time admission fee included"
     ],
@@ -111,7 +110,6 @@ export const MEMBERSHIP_PLANS: PricingPlan[] = [
       "Full Gym & Strength Arena Access",
       "High-tech Cardio Conditioning Suite",
       "Treadmills, Ellipticals & Spin Bikes",
-      "Locker room & shower amenities",
       "One-time admission fee included"
     ],
     description: "Complete strength and cardiovascular conditioning for fast results."
@@ -133,7 +131,7 @@ export const MEMBERSHIP_PLANS: PricingPlan[] = [
       "NO ADMISSION FEE (Save ₹1,000 instantly)",
       "₹667 / month equivalent",
       "Save ₹400 compared to monthly rate",
-      "Full strength & powerlifting floor access",
+      "Full strength & floor access",
       "Workout tracking & form guidance"
     ],
     description: "Consistent 90-day foundation phase to lock in visible muscle definition."
